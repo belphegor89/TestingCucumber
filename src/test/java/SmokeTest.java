@@ -21,10 +21,4 @@ import org.junit.runner.RunWith;
 )
 public class SmokeTest {
 
-    @AfterClass
-    public static void endTest() {
-        BasePage.driver.quit();
-        DriverManager.closeDriver();
-    }
-
 }

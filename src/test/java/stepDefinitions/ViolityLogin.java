@@ -4,6 +4,7 @@ import Pages.BasePage;
 import Pages.LoginPage;
 import Utils.DriverManager;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -30,5 +31,11 @@ public class ViolityLogin {
     @Then("^validate user icon is displayed$")
     public void userIconIsDisplayed() {
         loginPage.validateLogin();
+    }
+
+    @After
+    public static void endTest() {
+        BasePage.driver.quit();
+        DriverManager.closeDriver();
     }
 }

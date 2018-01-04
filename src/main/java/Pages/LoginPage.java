@@ -35,7 +35,7 @@ public class LoginPage extends BasePage {
     }
 
     public void validateLogin() {
-        logger.info("Validating user lobby link");
+        logger.info("Validating user lobby link ");
         isElementPresentAndDisplay(userLobbyLink);
     }
 }
