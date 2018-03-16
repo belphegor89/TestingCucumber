@@ -13,7 +13,6 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-
 /**
  * Created by yzosin on 20-Nov-17.
  */

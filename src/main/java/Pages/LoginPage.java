@@ -1,10 +1,8 @@
 package Pages;
 
 import Utils.PropertiesReader;
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 /**
  * Created by yzosin on 20-Nov-17.
@@ -13,7 +11,7 @@ public class LoginPage extends BasePage {
 
     private static LoginPage instance;
     public static LoginPage Instance = (instance != null) ? instance : new LoginPage();
-    public static Logger logger = Logger.getLogger(BasePage.class);
+    //public static Logger logger = Logger.getLogger(BasePage.class);
 
     By loginLink = By.xpath(".//*[@id='user_login']/a");
     By username = By.xpath(".//input[contains(@name,'login')]");
@@ -36,6 +34,7 @@ public class LoginPage extends BasePage {
 
     public void validateLogin() {
         logger.info("Validating user lobby link ");
-        isElementPresentAndDisplay(userLobbyLink);
+        String validationText = findElement(userLobbyLink).getText();
+        Assert.assertEquals("Text doesn't match the expected value:", "Мій кабінет",  validationText);
     }
 }

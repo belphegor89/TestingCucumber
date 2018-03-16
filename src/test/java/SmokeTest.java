@@ -1,9 +1,6 @@
-import Pages.BasePage;
-import Utils.DriverManager;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.CucumberOptions;
-import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
 /**
@@ -13,8 +10,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/features",
+        format = {"pretty", "html:target/cucumber.html", "junit:target/junit-report.xml"},
         glue = "stepDefinitions",
-        tags = "@violity",
+        tags = {},
         dryRun = false,
         strict = false,
         snippets = SnippetType.CAMELCASE
